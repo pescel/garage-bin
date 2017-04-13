@@ -21,7 +21,7 @@ app.get('/', (request, response) => {
   })
 })
 
-// Would use this if rendering a new page for single item
+// Would use this if rendering a new page for single item, but it's not currently being used
 app.get('/api/items/:id', (request, response) => {
   let { id } = request.params
   let item = app.locals.items.find((item) => {
@@ -33,7 +33,9 @@ app.get('/api/items/:id', (request, response) => {
 
 app.get('/api/items', (request, response) => {
   response.json(app.locals.items)
+
 })
+
 
 app.post('/api/items', (request, response) => {
   let newItem = request.body
@@ -44,3 +46,5 @@ app.post('/api/items', (request, response) => {
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on ${app.get('port')}.`)
 })
+
+module.exports = app;
