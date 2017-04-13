@@ -21,6 +21,11 @@ app.get('/', (request, response) => {
   })
 })
 
+app.get('/api/items', (request, response) => {
+  const items = app.locals.items
+  response.json(items)
+})
+
 app.get('/api/items/:id', (request, response) => {
   const { id } = request.params
   const itemId = app.locals.items.map((item) => {

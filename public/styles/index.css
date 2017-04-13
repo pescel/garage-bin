@@ -1,0 +1,8 @@
+.garage-container {
+  position: absolute;
+}
+
+.garage {
+  background-color: orchid;
+  z-index: 1;
+}
