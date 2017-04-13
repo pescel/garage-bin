@@ -1,4 +1,15 @@
 
 $('.open-garage').on('click', () => {
-  $("div").animate({opacity: '0.01'});
+  $('.garage').animate({fontSize: '40px'});
+  console.log('click');
 })
+// 
+// $.get('/api/items', (data) => {
+//   displayGarageItems(data)
+// })
+
+
+// displayGarageItems(data) {
+//
+//
+// }
