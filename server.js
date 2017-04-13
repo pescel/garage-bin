@@ -11,8 +11,8 @@ app.use(express.static('public'))
 app.set('port', process.env.PORT || 8080)
 app.locals.title = 'Garage Bin'
 app.locals.items = [
-  { id: 1, item: 'shag rug', reason: 'maybe it will come back in style', cleanliness: 'dusty' },
-  { id: 2, item: 'bike', reason: 'too dirty to store inside', cleanliness: 'rancid' }
+  { id: 1, name: 'shag rug', reason: 'maybe it will come back in style', cleanliness: 'dusty' },
+  { id: 2, name: 'bike', reason: 'too dirty to store inside', cleanliness: 'rancid' }
 ]
 
 app.get('/', (request, response) => {
@@ -30,6 +30,16 @@ app.get('/api/items/:id', (request, response) => {
   })
 
   response.json({ id, itemId })
+})
+
+app.get('/api/items', (request, response) => {
+  response.json(app.locals.items)
+})
+
+app.post('/api/items', (request, response) => {
+  let newItem = request.body
+  app.locals.items.push(newItem)
+  response.json(newItem)
 })
 
 app.listen(app.get('port'), () => {
