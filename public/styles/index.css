@@ -3,7 +3,7 @@ html {
   background-color: #e5e7eb;
 }
 
-h1 {
+.title {
   font-family: 'Monoton', sans-serif;
   font-size: 70px;
   text-align: center;
@@ -69,7 +69,7 @@ input {
 }
 
 .item:hover {
-  color: #00b5c6 ;
+  color: #0c328a;
   cursor: pointer;
 }
 
@@ -93,4 +93,12 @@ input {
   cursor: pointer;
   background-color: #0c328a;
   color: white;
+}
+
+.selected-text {
+  font-family: 'Arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+  text-align: center;
 }

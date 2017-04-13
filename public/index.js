@@ -15,7 +15,7 @@ $('.open-garage').on('click', () => {
   if ($('.garage').height() === 0) {
     closeGarage()
   } else {
-    $('.open-garage').text("Close")
+    $('.open-garage').text('Close')
     $('.garage').animate({height: '0px'});
   }
   console.log('click');
@@ -33,7 +33,7 @@ fetchGarageItems = () => {
 }
 
 itemElement = (item) => {
-  return `<li class="item" data-id='${item.id}'>${item.name}</li>`
+  return `<li class='item' data-id='${item.id}'>${item.name}</li>`
 }
 
 $('.items-list').on('click', '.item', (e) => {
@@ -43,7 +43,7 @@ $('.items-list').on('click', '.item', (e) => {
 
 renderSelectedItem = (itemId) => {
   let item = garageItems.find((item) => { return itemId == item.id })
-  $('.selected-item').html(`<p>Name: ${item.name} Reason: ${item.reason} Cleanliness: ${item.cleanliness}</p>`)
+  $('.selected-item').html(`<p class='selected-text'>Name: ${item.name} Reason: ${item.reason} Cleanliness: ${item.cleanliness}</p>`)
 }
 
 renderGarageItems = () => {
@@ -112,9 +112,9 @@ sortItems = () => {
 }
 
 updateCount = () => {
-  let sparklingItems = garageItems.filter((item)=>{return item.cleanliness == "sparkling"})
-  let dustyItems = garageItems.filter((item)=>{return item.cleanliness == "dusty"})
-  let rancidItems = garageItems.filter((item)=>{return item.cleanliness == "rancid"})
+  let sparklingItems = garageItems.filter((item)=>{return item.cleanliness == 'sparkling'})
+  let dustyItems = garageItems.filter((item)=>{return item.cleanliness == 'dusty'})
+  let rancidItems = garageItems.filter((item)=>{return item.cleanliness == 'rancid'})
   $('.total-count').text(garageItems.length)
   $('.sparkling-count').text(sparklingItems.length)
   $('.dusty-count').text(dustyItems.length)
