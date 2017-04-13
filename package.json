@@ -1,0 +1,29 @@
+{
+  "name": "garage-bin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha ./tests/**.js || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pescel/garage-bin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pescel/garage-bin/issues"
+  },
+  "homepage": "https://github.com/pescel/garage-bin#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "jquery": "^3.2.1",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
