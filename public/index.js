@@ -2,28 +2,53 @@
 let garageItems = [];
 
 $(document).ready(()=>{
-  //addGarageItems()
   fetchGarageItems()
 })
 
+closeGarage = () => {
+  let listHeight = $('.items-list').height()
+  $('.garage').animate({height: listHeight});
+  $('.open-garage').text('Open')
+}
+
 $('.open-garage').on('click', () => {
-  $('.garage').animate({fontSize: '40px'});
+  if ($('.garage').height() === 0) {
+    closeGarage()
+  } else {
+    $('.open-garage').text("Close")
+    $('.garage').animate({height: '0px'});
+  }
   console.log('click');
 })
 
 fetchGarageItems = () => {
-  fetch('/api/items')
+  return fetch('/api/items')
   .then((response) => { return response.json() })
   .then((items) => {
     garageItems = items
     renderGarageItems()
+    closeGarage()
     updateCount()
   })
 }
 
+itemElement = (item) => {
+  return `<li class="item" data-id='${item.id}'>${item.name}</li>`
+}
+
+$('.items-list').on('click', '.item', (e) => {
+  let itemId = $(e.currentTarget).data('id')
+  renderSelectedItem(itemId)
+})
+
+renderSelectedItem = (itemId) => {
+  let item = garageItems.find((item) => { return itemId == item.id })
+  $('.selected-item').html(`<p>Name: ${item.name} Reason: ${item.reason} Cleanliness: ${item.cleanliness}</p>`)
+}
+
 renderGarageItems = () => {
   garageItems.map((item) => {
-    $('.items-list').append(`<li>${item.name}</li>`)
+    $('.items-list').append(itemElement(item))
   })
 }
 
@@ -53,7 +78,7 @@ postNewItem = (newItem) => {
   })
   .then((response) => { return response.json() })
   .then((item) => {
-    $('.items-list').append(`<li>${item.name}</li>`)
+    $('.items-list').append(itemElement(item))
     garageItems.push(item)
     updateCount()
   })

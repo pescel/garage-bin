@@ -1,0 +1,96 @@
+
+html {
+  background-color: #e5e7eb;
+}
+
+h1 {
+  font-family: 'Monoton', sans-serif;
+  font-size: 70px;
+  text-align: center;
+}
+
+.text {
+  font-family: 'Arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+input {
+  height: 30px;
+  width: 30%;
+  margin-left: 25px;
+  font-size: 17px;
+  outline-color: #00b5c6;
+}
+
+.cleanliness-dropdown {
+  height: 30px;
+  width: 30%;
+  margin-left: 25px;
+  font-size: 17px;
+  outline-color: #00b5c6;
+}
+
+.add-item-btn {
+  display: block;
+  margin: 25px auto;
+  height: 30px;
+  width: 25%;
+  border: none;
+  border-radius: 5px;
+  background-color: #00b5c6;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.add-item-btn:hover {
+  cursor: pointer;
+  background-color: #0c328a;
+  color: white;
+}
+
+
+.garage {
+  position: absolute;
+  background-color: #0c328a;
+  width: 100%;
+  z-index: 1;
+}
+
+.item {
+  margin: 15px;
+  font-family: 'Arial';
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.item:hover {
+  color: #00b5c6 ;
+  cursor: pointer;
+}
+
+.buttons-container {
+  text-align: center;
+}
+
+.open-garage, .sort-btn {
+  margin: 20px;
+  height: 30px;
+  width: 25%;
+  border: none;
+  border-radius: 5px;
+  background-color: #00b5c6;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.open-garage:hover, .sort-btn:hover {
+  cursor: pointer;
+  background-color: #0c328a;
+  color: white;
+}
