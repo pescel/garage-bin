@@ -3,16 +3,19 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+
     <title>Garage Bin</title>
   </head>
   <body>
-    <h1>Garage Bin</h1>
-     <div>
-       <p>Item Name:</p>
+    <h1 class='title'>Garage Bin</h1>
+     <div class='new-item-container'>
+       <p class='text'>Item Name:</p>
        <input class='name-input' placeholder='item' />
-       <p>Why is it in Storage?:</p>
-       <input class='storage-reason' placeholder='storage reason' />
-       <p>How Clean is it?:</p>
+       <p class='text'>Why is it in Storage?:</p>
+       <input class='storage-reason-input' placeholder='storage reason' />
+       <p class='text'>How Clean is it?:</p>
        <select class='cleanliness-dropdown'>
          <option value='sparkling'>Sparkling</option>
          <option value='dusty'>Dusty</option>
@@ -20,16 +23,22 @@
        </select>
        <button class='add-item-btn'>Add Item!</button>
      </div>
-    <!-- <div class='garage-container'>
-      <div class='garage'>
-        <ul class='items-list'>
-          <li class='single-item'></li>
-          <li class='single-item'></li>
-          <li class='single-item'></li>
-        </ul>
+     <div class='garage-container'>
+       <div class='garage'></div>
+       <ul class='items-list'>
+       </ul>
+       <div class='buttons-container'>
+         <button class='open-garage'>Open</button>
+         <button class='sort-btn'>Sort Items</button>
       </div>
-    </div> -->
-    <button class='open-garage'>Open</button>
+       <p class='text'>Total Items: <span class='total-count text'>0</span></p>
+       <p class='text'>Sparkling Items: <span class='sparkling-count text'>0</span></p>
+       <p class='text'>Dusty Items: <span class='dusty-count text'>0</span></p>
+       <p class='text'>Rancid Items: <span class='rancid-count text'>0</span></p>
+     </div>
+    <div class="selected-item">
+    </div>
+
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src='./index.js'></script>
