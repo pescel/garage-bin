@@ -122,3 +122,4 @@ updateCount = () => {
   $('.dusty-count').text(dustyItems.length)
   $('.rancid-count').text(rancidItems.length)
 }
+
