@@ -53,11 +53,23 @@ it('should return all garage items', (done)  => {
     });
   });
 
-  it('should return an error if the wrong url is used', () => {
-    chai.request(app)
-    .get('/api/garage')
-    .end(err,res) => {
-      if(err) { done(err); }
-      expect(res).to.have.status(404);
-    }
-  })
+  describe('POST /api/items', () => {
+          afterEach((done) => {
+            app.locals.items = [];
+            done();
+          });
+
+          it('should add a new item', (done) => {
+          chai.request(app)
+          .post('/api/items')
+          .send({ name: 'skeletons' })
+          .end((err, res) => {
+            if(err) { done(err); }
+            expect(res).to.have.status(200);
+            expect(res).to.be.json;
+            expect(res.body).to.be.a('object');
+            expect(res.body).to.have.property('name');
+            done();
+          });
+        });
+      });
