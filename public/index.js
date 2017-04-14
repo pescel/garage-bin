@@ -1,3 +1,4 @@
+
 // Store items in global array so I dont have to constantly query the dom
 let garageItems = [];
 
@@ -119,4 +120,3 @@ updateCount = () => {
   $('.sparkling-count').text(sparklingItems.length)
   $('.dusty-count').text(dustyItems.length)
   $('.rancid-count').text(rancidItems.length)
-}
