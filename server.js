@@ -3,7 +3,6 @@ const app = express()
 const bodyParser = require('body-parser')
 const fs = require('fs')
 
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
@@ -27,14 +26,12 @@ app.get('/api/items', (request, response) => {
 })
 
 app.get('/api/items/:id', (request, response) => {
-  const { id } = request.params
-  const itemId = app.locals.items.map((item) => {
-    if(item.id == id) {
-      response.json(item)
-    }
+  let { id } = request.params
+  let item = app.locals.items.find((item) => {
+    return item.id == id
   })
 
-  response.json({ id, itemId })
+  response.json(item)
 })
 
 app.get('/api/items', (request, response) => {
@@ -50,3 +47,5 @@ app.post('/api/items', (request, response) => {
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on ${app.get('port')}.`)
 })
+
+module.exports = app;
