@@ -20,6 +20,11 @@ app.get('/', (request, response) => {
   })
 })
 
+app.get('/api/items', (request, response) => {
+  const items = app.locals.items
+  response.json(items)
+})
+
 app.get('/api/items/:id', (request, response) => {
   let { id } = request.params
   let item = app.locals.items.find((item) => {

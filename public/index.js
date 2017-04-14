@@ -1,3 +1,4 @@
+
 // Store items in global array so I dont have to constantly query the dom
 let garageItems = [];
 
