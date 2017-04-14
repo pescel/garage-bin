@@ -3,7 +3,6 @@ const app = express()
 const bodyParser = require('body-parser')
 const fs = require('fs')
 
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
@@ -48,3 +47,5 @@ app.post('/api/items', (request, response) => {
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on ${app.get('port')}.`)
 })
+
+module.exports = app;

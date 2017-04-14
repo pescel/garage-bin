@@ -7,7 +7,7 @@ $(document).ready(()=>{
 })
 
 closeGarage = () => {
-  let listHeight = $('.items-list').height()
+  let listHeight = $('.items-list').height() + 10
   $('.garage').animate({height: listHeight});
   $('.open-garage').text('Open')
 }
@@ -81,6 +81,7 @@ postNewItem = (newItem) => {
   .then((item) => {
     $('.items-list').append(itemElement(item))
     garageItems.push(item)
+    closeGarage()
     updateCount()
   })
 
@@ -120,3 +121,5 @@ updateCount = () => {
   $('.sparkling-count').text(sparklingItems.length)
   $('.dusty-count').text(dustyItems.length)
   $('.rancid-count').text(rancidItems.length)
+}
+
